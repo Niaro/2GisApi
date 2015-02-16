@@ -1,4 +1,4 @@
-﻿// <copyright file="GeoPoint.cs" company="Mindfor">
+﻿// <copyright file="Response.cs" company="Mindfor">
 //     Copyright (c) 2015, George Evstigneev All rights reserved.
 //     
 //     Redistribution and use in source and binary forms, with or without modification, are
@@ -24,46 +24,43 @@
 // <author> George Evstigneev </author>
 
 using System;
-using System.Globalization;
 
-namespace DoubleGisApiWrapper
+namespace DoubleGisApiWrapper.Response
 {
 	/// <summary>
-	/// Class that represent coordinats in WGS84 format. 
+	/// Class that represents the response from API. 
 	/// </summary>
-	public class GeoPoint
+	/// <typeparam name="T"> Response type. </typeparam>
+	public class ApiResponse<T>
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GeoPoint"/> class. 
+		/// Gets or sets a value indicating whether the response is canceled. 
 		/// </summary>
-		/// <param name="lon"> The longitude. </param>
-		/// <param name="lat"> The latitude. </param>
-		public GeoPoint(double lon, double lat)
-		{
-			this.Lon = lon;
-			this.Lat = lat;
-		}
+		/// <value> <c> true </c> if this response is canceled; otherwise, <c> false </c>. </value>
+		public bool IsCanceled { get; set; }
 
 		/// <summary>
-		/// Gets or sets the longitude. 
+		/// Gets or sets a value indicating whether the response is was successed. 
 		/// </summary>
-		/// <value> The longitude. </value>
-		public double Lon { get; set; }
+		/// <value> <c> true </c> if this response is successed; otherwise, <c> false </c>. </value>
+		public bool IsSuccess { get; set; }
 
 		/// <summary>
-		/// Gets or sets the latitude. 
+		/// Gets or sets the error. 
 		/// </summary>
-		/// <value> The latitude. </value>
-		public double Lat { get; set; }
+		/// <value> The error. </value>
+		public Exception Error { get; set; }
 
 		/// <summary>
-		/// Returns a <see cref="System.String"/> that represents this instance. 
+		/// Gets or sets the response. 
 		/// </summary>
-		/// <returns> A <see cref="System.String"/> that represents this instance. </returns>
-		public override string ToString()
-		{
-			////Changing [,] to [.]
-			return this.Lat.ToString(CultureInfo.InvariantCulture) + "," + this.Lon.ToString(CultureInfo.InvariantCulture);
-		}
+		/// <value> The response. </value>
+		public T Response { get; set; }
+
+		/// <summary>
+		/// Gets or sets the info message. 
+		/// </summary>
+		/// <value> The info message. </value>
+		public string InfoMessage { get; set; }
 	}
 }

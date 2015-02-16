@@ -1,5 +1,5 @@
-﻿// <copyright file="GeoPoint.cs" company="Mindfor">
-//     Copyright (c) 2015, George Evstigneev All rights reserved.
+﻿// <copyright file="AdsResult.cs" company="Mindfor">
+//     Copyright (c) 2015-2012, George Evstigneev All rights reserved.
 //     
 //     Redistribution and use in source and binary forms, with or without modification, are
 //     permitted provided that the following conditions are met:
@@ -23,47 +23,22 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-using System;
-using System.Globalization;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 
-namespace DoubleGisApiWrapper
+namespace DoubleGisApiWrapper.Types
 {
 	/// <summary>
-	/// Class that represent coordinats in WGS84 format. 
+	/// Class that represents the results of the search. 
 	/// </summary>
-	public class GeoPoint
+	[DataContract(Name = "adsResult", Namespace = "")]
+	public class AdsResult : ResultBase
 	{
 		/// <summary>
-		/// Initializes a new instance of the <see cref="GeoPoint"/> class. 
+		/// Gets or sets the advertising. 
 		/// </summary>
-		/// <param name="lon"> The longitude. </param>
-		/// <param name="lat"> The latitude. </param>
-		public GeoPoint(double lon, double lat)
-		{
-			this.Lon = lon;
-			this.Lat = lat;
-		}
-
-		/// <summary>
-		/// Gets or sets the longitude. 
-		/// </summary>
-		/// <value> The longitude. </value>
-		public double Lon { get; set; }
-
-		/// <summary>
-		/// Gets or sets the latitude. 
-		/// </summary>
-		/// <value> The latitude. </value>
-		public double Lat { get; set; }
-
-		/// <summary>
-		/// Returns a <see cref="System.String"/> that represents this instance. 
-		/// </summary>
-		/// <returns> A <see cref="System.String"/> that represents this instance. </returns>
-		public override string ToString()
-		{
-			////Changing [,] to [.]
-			return this.Lat.ToString(CultureInfo.InvariantCulture) + "," + this.Lon.ToString(CultureInfo.InvariantCulture);
-		}
+		/// <value> The advertising. </value>
+		[DataMember(Name = "advertising")]
+		public Advertising Advertising { get; set; }
 	}
 }

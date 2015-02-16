@@ -1,23 +1,34 @@
 ﻿{
-    "version": "1.0.0-*",
-    "dependencies": {
-    },
+	"version": "1.0.0",
+	"authors": [ "Mindfor Ltd." ],
+	"description": "Provides wrapping about 2GIS Api for ASP.NET Core 5.0+",
+	"dependencies": {
+	},
 
-    "frameworks" : {
-        "aspnet50" : { 
-            "dependencies": {
-            }
-        },
-        "aspnetcore50" : { 
-            "dependencies": {
+	"frameworks": {
+		"aspnet50": {
+			"dependencies": {
+				"Newtonsoft.Json": ""
+			},
+			"frameworkAssemblies": {
+				"System.Runtime": "",
+				"System.Runtime.Extensions":"", 
+				"System.ComponentModel.DataAnnotations": "",
+				"System.Runtime.Serialization": "",
+				"System.Net.Http": ""
+			}
+		},
+		"aspnetcore50": {
+			"dependencies": {
 				"System.Runtime": "4.0.20-*",
 				"System.Net.Http": "4.0.0-*",
 				"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-*",
-				 	"System.ComponentModel.Annotations": "4.0.10-*",
+				"Newtonsoft.Json": "",
+				"System.ComponentModel.Annotations": "4.0.10-*",
 				"System.Runtime.Extensions": "4.0.10.0-*",
 				"System.Runtime.Serialization.Primitives": "4.0.0-*",
 				"System.Text.RegularExpressions": "4.0.10-*"
-            }
-        }
-    }
+			}
+		}
+	}
 }
