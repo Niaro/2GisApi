@@ -1,0 +1,220 @@
+﻿// <copyright file="FirmProfileResponse.cs" company="Company">
+//
+//    Copyright (c) 2011, Anton Gubarenko
+//    All rights reserved.
+//
+//    Redistribution and use in source and binary forms, with or without
+//    modification, are permitted provided that the following conditions are met:
+//        * Redistributions of source code must retain the above copyright
+//          notice, this list of conditions and the following disclaimer.
+//        * Redistributions in binary form must reproduce the above copyright
+//          notice, this list of conditions and the following disclaimer in the
+//          documentation and/or other materials provided with the distribution.
+//        * Neither the name of Sergey Mudrov nor the
+//          names of its contributors may be used to endorse or promote products
+//          derived from this software without specific prior written permission.
+//
+//    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+//    ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+//    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+//    DISCLAIMED. IN NO EVENT SHALL ANTON GUBARENKO BE LIABLE FOR ANY
+//    DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+//    (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+//    LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+//    ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+//    (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+//    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+// </copyright>
+// <author>Anton Gubarenko</author>
+namespace GisApiWrapper.Responses
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics.CodeAnalysis;
+    using Types;    
+
+    /// <summary>
+    /// Class that represents Firm Profile Response.
+    /// </summary>
+    [SuppressMessage("Microsoft.StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "JSON deserialization properties must be identical to API names")]
+    [CLSCompliant(true)]
+    public class FirmProfileResponse
+    {
+        /// <summary>
+        /// Gets or sets the API version.
+        /// </summary>
+        /// <value>
+        /// The API version.
+        /// </value>
+        public string api_version { get; set; }
+
+        /// <summary>
+        /// Gets or sets the response code. 200 if ok, else - error. 
+        /// </summary>
+        /// <value>
+        /// The response code.
+        /// </value>
+        public string response_code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the error code.
+        /// </summary>
+        /// <value>
+        /// The error code.
+        /// </value>
+        public string error_code { get; set; }
+
+        /// <summary>
+        /// Gets or sets the error message.
+        /// </summary>
+        /// <value>
+        /// The error message.
+        /// </value>
+        public string error_message { get; set; }
+
+        /// <summary>
+        /// Gets or sets the firm ID.
+        /// </summary>
+        /// <value>
+        /// The firm ID.
+        /// </value>
+        public string id { get; set; }
+
+        /// <summary>
+        /// Gets or sets the deletion date of the branch.
+        /// </summary>
+        /// <value>
+        /// The deletion date.
+        /// </value>
+        public string deletion_date { get; set; }
+
+        /// <summary>
+        /// Gets or sets the query parameters for API Tracker.
+        /// </summary>
+        /// <value>
+        /// The query parameters for API Tracker.
+        /// </value>
+        public string register_bc_url { get; set; }
+
+        /// <summary>
+        /// Gets or sets the longitude coordinates on the map.
+        /// </summary>
+        /// <value>
+        /// The longitude.
+        /// </value>
+        public string lon { get; set; }
+
+        /// <summary>
+        /// Gets or sets the latitude coordinates on the map.
+        /// </summary>
+        /// <value>
+        /// The latitude.
+        /// </value>
+        public string lat { get; set; }
+
+        /// <summary>
+        /// Gets or sets the firms name.
+        /// </summary>
+        /// <value>
+        /// The firms name.
+        /// </value>
+        public string name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the firm group. If firm has some branches.
+        /// </summary>
+        /// <value>
+        /// The firm group.
+        /// </value>
+        public FirmGroup firm_group { get; set; }
+
+        /// <summary>
+        /// Gets or sets the city name.
+        /// </summary>
+        /// <value>
+        /// The city name.
+        /// </value>
+        public string city_name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the address of the firm.
+        /// </summary>
+        /// <value>
+        /// The address of the firm.
+        /// </value>
+        public string address { get; set; }
+
+        /// <summary>
+        /// Gets or sets the additional info.
+        /// </summary>
+        /// <value>
+        /// The additional info.
+        /// </value>
+        public AdditionalInfo additional_info { get; set; }
+
+        /// <summary>
+        /// Gets or sets the rubrics.
+        /// </summary>
+        /// <value>
+        /// The rubrics.
+        /// </value>
+        public IEnumerable<string> rubrics { get; set; }
+
+        /// <summary>
+        /// Gets or sets the article, 2000 chars or advertising.
+        /// </summary>
+        /// <value>
+        /// The article.
+        /// </value>
+        public string article { get; set; }
+
+        /// <summary>
+        /// Gets or sets the contacts of the firm.
+        /// </summary>
+        /// <value>
+        /// The contacts of the firm.
+        /// </value>
+        public IEnumerable<Contact> contacts { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the working schedule of the firm.
+        /// </summary>
+        /// <value>
+        /// The working schedule.
+        /// </value>
+        public Schedule schedule { get; set; }
+
+        /// <summary>
+        /// Gets or sets the pay options.
+        /// </summary>
+        /// <value>
+        /// The pay options.
+        /// </value>
+        public IEnumerable<string> payoptions { get; set; }
+
+        /// <summary>
+        /// Gets or sets the reviews count on Flamp.ru.
+        /// </summary>
+        /// <value>
+        /// The reviews count.
+        /// </value>
+        public string reviews_count { get; set; }
+
+        /// <summary>
+        /// Gets or sets the modification time.
+        /// </summary>
+        /// <value>
+        /// The modification time.
+        /// </value>
+        public string modification_time { get; set; }
+
+        /// <summary>
+        /// Gets or sets the creation time.
+        /// </summary>
+        /// <value>
+        /// The creation time.
+        /// </value>
+        public string create_time { get; set; }
+    }
+}
