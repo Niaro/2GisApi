@@ -1,0 +1,1557 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mindfor.DoubleGisApi</name>
+    </assembly>
+    <members>
+        <member name="T:DoubleGisApi.Bound">
+            <summary>
+            Bounds for Firms search. 
+            </summary>
+        </member>
+        <member name="M:DoubleGisApi.Bound.#ctor(DoubleGisApi.GeoPoint,DoubleGisApi.GeoPoint)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DoubleGisApi.Bound"/> class. 
+            </summary>
+            <param name="upperLeftPoint"> The upper left point. </param>
+            <param name="lowerRightPoint"> The lower right point. </param>
+        </member>
+        <member name="P:DoubleGisApi.Bound.UpperLeftPoint">
+            <summary>
+            Gets or sets the upper left point. 
+            </summary>
+            <value> The upper left. </value>
+        </member>
+        <member name="P:DoubleGisApi.Bound.LowerRightPoint">
+            <summary>
+            Gets or sets the lower right point. 
+            </summary>
+            <value> The lower right point. </value>
+        </member>
+        <member name="T:DoubleGisApi.GeoPoint">
+            <summary>
+            Class that represent coordinats in WGS84 format. 
+            </summary>
+        </member>
+        <member name="M:DoubleGisApi.GeoPoint.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DoubleGisApi.GeoPoint"/> class. 
+            </summary>
+            <param name="lon"> The longitude. </param>
+            <param name="lat"> The latitude. </param>
+        </member>
+        <member name="P:DoubleGisApi.GeoPoint.Lon">
+            <summary>
+            Gets or sets the longitude. 
+            </summary>
+            <value> The longitude. </value>
+        </member>
+        <member name="P:DoubleGisApi.GeoPoint.Lat">
+            <summary>
+            Gets or sets the latitude. 
+            </summary>
+            <value> The latitude. </value>
+        </member>
+        <member name="M:DoubleGisApi.GeoPoint.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance. 
+            </summary>
+            <returns> A <see cref="T:System.String"/> that represents this instance. </returns>
+        </member>
+        <member name="T:DoubleGisApi.GeoTypes">
+            <summary>
+            Enumaration of GeoObject types. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.house">
+            <summary>
+            House. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.street">
+            <summary>
+            Street. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.district">
+            <summary>
+            District. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.settlement">
+            <summary>
+            Settlement. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.living_area">
+            <summary>
+            Living area. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.place">
+            <summary>
+            Place. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.station_platform">
+            <summary>
+            Station platform. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GeoTypes.station">
+            <summary>
+            Station. 
+            </summary>
+        </member>
+        <member name="T:DoubleGisApi.GisApi">
+            <summary>
+            Class that represents API wrapper for 2GIS API. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GisApi._secretKey">
+            <summary>
+            Secret key that you can obtain here: http://partner.api.2gis.ru/ 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GisApi._apiEndpoint">
+            <summary>
+            API endpoint. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GisApi._apiTrackerEndpoint">
+            <summary>
+            API endpoint. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GisApi._apiAdsEndpoint">
+            <summary>
+            API endpoint. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.GisApi._client">
+            <summary>
+            HttpClient object to make API calls. 
+            </summary>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DoubleGisApi.GisApi"/> class. 
+            </summary>
+            <param name="key"> The secret key. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.#ctor(System.String,System.Net.Http.HttpClient)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DoubleGisApi.GisApi"/> class. 
+            </summary>
+            <param name="key"> The secret key. </param>
+            <param name="client"> The client object for async operations. </param>
+        </member>
+        <member name="T:DoubleGisApi.GisApi.ApiCallbackType`1">
+            <summary>
+            Callback for API calls. So you don't have to get type of each response. 
+            </summary>
+            <typeparam name="T"> Response type. </typeparam>
+            <param name="resp"> The response object. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting
+            unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged and - optionally - managed resources 
+            </summary>
+            <param name="removeResources">
+            <c> true </c> to release both managed and unmanaged resources; <c> false </c> to release
+            only unmanaged resources.
+            </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindFirms(System.String,System.String,System.Nullable{System.Int64},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{DoubleGisApi.SortDirections},System.String[])">
+            <summary>
+            Finds the firms by what and where parameters. 
+            </summary>
+            <param name="what"> The what field. Length &gt; 2. </param>
+            <param name="where"> The where field. Length &gt; 2. </param>
+            <param name="radius">
+            The radius of search. Values from 1 to 40000. 250 by default. Unnecessary parameter.
+            </param>
+            <param name="page"> The number of requested page. Unnecessary parameter. </param>
+            <param name="pagesize">
+            The results count on page. Values from 5 to 50. 20 by default. Unnecessary parameter.
+            </param>
+            <param name="sort"> The sorting key. Unnecessary parameter. </param>
+            <param name="filters"> The additional sorting filter by working time. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindFirms(System.String,DoubleGisApi.GeoPoint,System.Nullable{System.Int64},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{DoubleGisApi.SortDirections},System.String[])">
+            <summary>
+            Finds the firms by what and point parameters. 
+            </summary>
+            <param name="what"> The what field. Length &gt; 2. </param>
+            <param name="point"> The coordinates of the serach area in WGS84 format. </param>
+            <param name="radius">
+            The radius of search. Values from 1 to 40000. 250 by default. Unnecessary parameter.
+            </param>
+            <param name="page"> The number of requested page. Unnecessary parameter. </param>
+            <param name="pagesize">
+            The results count on page. Values from 5 to 50. 20 by default. Unnecessary parameter.
+            </param>
+            <param name="sort"> The sorting key. Unnecessary parameter. </param>
+            <param name="filters"> The additional sorting filter by working time. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindFirms(System.String,DoubleGisApi.Bound,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{DoubleGisApi.SortDirections},System.String[])">
+            <summary>
+            Finds the firms in specific region. 
+            </summary>
+            <param name="what"> The what field. Length &gt; 2. </param>
+            <param name="bound">
+            The bounds of the region. Must contatin 2 points. Upper left and lower right.
+            </param>
+            <param name="page"> The number of requested page. Unnecessary parameter. </param>
+            <param name="pagesize">
+            The results count on page. Values from 5 to 50. 20 by default. Unnecessary parameter.
+            </param>
+            <param name="sort"> The sorting key. Unnecessary parameter. </param>
+            <param name="filters"> The additional sorting filter by working time. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindFirms(System.String,DoubleGisApi.Bound)">
+            <summary>
+            Finds the firms in specific region. 
+            </summary>
+            <param name="what"> The what field. Length &gt; 2. </param>
+            <param name="bound">
+            The bounds of the region. Must contatin 2 points. Upper left and lower right.
+            </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindFirms(System.String,System.String)">
+            <summary>
+            Finds the firms by What and Where. 
+            </summary>
+            <param name="what"> The what field. Length &gt; 2. </param>
+            <param name="where"> The where field. Length &gt; 2. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetRubrics(System.String)">
+            <summary>
+            Gets the rubrics by city name. 
+            </summary>
+            <param name="where"> The city name. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetRubrics(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{DoubleGisApi.SortDirections})">
+            <summary>
+            Gets the rubrics by city name or by rubric ID. 
+            </summary>
+            <param name="where"> The city name. </param>
+            <param name="id"> The rubric ID. </param>
+            <param name="parentId"> The parent rubric id. </param>
+            <param name="showChildren"> Should show children flag. 1 - to show, any other - no. </param>
+            <param name="sort">
+            The sorting key. Supported: name - alphabetical sort, popularity - by popularity value.
+            </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindFirmsInRubric(System.String,System.String,System.Nullable{System.Int64},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{DoubleGisApi.SortDirections},System.String[])">
+            <summary>
+            Finds the firms in selected rubric. 
+            </summary>
+            <param name="rubric"> The rubric for search. </param>
+            <param name="where"> The where field. Length &gt; 2. </param>
+            <param name="radius">
+            The radius of search. Values from 1 to 40000. 250 by default. Unnecessary parameter.
+            </param>
+            <param name="page"> The number of requested page. Unnecessary parameter. </param>
+            <param name="pagesize">
+            The results count on page. Values from 5 to 50. 20 by default. Unnecessary parameter.
+            </param>
+            <param name="sort"> The sorting key. Unnecessary parameter. </param>
+            <param name="filters"> The additional sorting filter by working time. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindFirmsInRubric(System.String,System.String)">
+            <summary>
+            Finds the firms in selected rubric. 
+            </summary>
+            <param name="rubric"> The rubric for search. </param>
+            <param name="where"> The where field. Length &gt; 2. </param>
+            <param name="callback"> The callback. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetFirmInfo(System.String,System.String)">
+            <summary>
+            Gets the firm info by it's ID and HASH. 
+            </summary>
+            <param name="id"> The id of the firm. </param>
+            <param name="hash"> The unique hash of th e firm. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetFirmsBranches(System.String)">
+            <summary>
+            Gets the firms branches by firm ID. 
+            </summary>
+            <param name="firmid"> The firm ID. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.RegisterProfileViews(System.String)">
+            <summary>
+            Registers the firm profile views. 
+            </summary>
+            <param name="hash">
+            The hash of the firm. Can be get from register_bc_url field of the firm's profile.
+            </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetProjects">
+            <summary>
+            Gets the projects. 
+            </summary>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetCitiesInProject(System.String)">
+            <summary>
+            Gets the cities in project. 
+            </summary>
+            <param name="where"> The city name. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetCitiesInProjectById(System.String)">
+            <summary>
+            Gets the cities in project by project ID. 
+            </summary>
+            <param name="id"> The project id </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetGeoObjects(System.String,DoubleGisApi.GisApi.ApiCallbackType{DoubleGisApi.Response.GetGeoObjectResponse})">
+            <summary>
+            Gets the geo objects by name. 
+            </summary>
+            <param name="q"> The query. Length &gt; 2. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetGeoObjects(System.String,System.String[],System.Nullable{System.Int64})">
+            <summary>
+            Gets the geo objects by name. 
+            </summary>
+            <param name="q"> The query. Length &gt; 2. </param>
+            <param name="types"> The types array. See GeoTypes. Unnecessary parameter. </param>
+            <param name="limit"> The limit of results. By default: 1. Unnecessary parameter. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetGeoObjects(DoubleGisApi.GeoPoint)">
+            <summary>
+            Gets the geo objects by coordinats. 
+            </summary>
+            <param name="point"> The coordinates of the serach area in WGS84 format. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetGeoObjects(DoubleGisApi.GeoPoint,System.String[],System.Nullable{System.Int64},System.String)">
+            <summary>
+            Gets the geo objects by coordinats. 
+            </summary>
+            <param name="point"> The coordinates of the serach area in WGS84 format. </param>
+            <param name="types"> The types array. See GeoTypes. Unnecessary parameter. </param>
+            <param name="radius">
+            The search radius in meters. Values from 1 to 250. Unnecessary parameter.
+            </param>
+            <param name="project"> The project ID to search in. Unnecessary parameter. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.GetGeoObjectInfo(System.String)">
+            <summary>
+            Gets the geo object info. 
+            </summary>
+            <param name="id"> The id if geo object. </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindAds(System.String,System.String,System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Finds the ads by what and where parameters. 
+            </summary>
+            <param name="what"> The what field. Length &gt; 2. </param>
+            <param name="where"> The where field. Length &gt; 2. </param>
+            <param name="format"> The format of the resonse. Short or full.. </param>
+            <param name="page"> The number of requested page. Unnecessary parameter. </param>
+            <param name="pagesize">
+            The results count on page. Values from 5 to 50. 20 by default. Unnecessary parameter.
+            </param>
+        </member>
+        <member name="M:DoubleGisApi.GisApi.FindAds(System.String,System.String)">
+            <summary>
+            Finds the ads by what and where parameters. 
+            </summary>
+            <param name="what"> The what field. Length &gt; 2. </param>
+            <param name="where"> The where field. Length &gt; 2. </param>
+        </member>
+        <member name="T:DoubleGisApi.SortDays">
+            <summary>
+            Enumeration of sorting keys by day of week. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDays.mon">
+            <summary>
+            Monday. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDays.tue">
+            <summary>
+            Tuesday. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDays.wed">
+            <summary>
+            Wednesday. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDays.thu">
+            <summary>
+            Thursday. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDays.fri">
+            <summary>
+            Friday. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDays.sat">
+            <summary>
+            Saturday. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDays.sun">
+            <summary>
+            Sunday. 
+            </summary>
+        </member>
+        <member name="T:DoubleGisApi.SortDirections">
+            <summary>
+            Enumeration of sorting keys. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDirections.Relevance">
+            <summary>
+            Best query match. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDirections.Name">
+            <summary>
+            By name, alphabetically. 
+            </summary>
+        </member>
+        <member name="F:DoubleGisApi.SortDirections.Rating">
+            <summary>
+            By rating. 
+            </summary>
+        </member>
+        <member name="T:DoubleGisApi.Response.ApiResponse`1">
+            <summary>
+            Class that represents the response from API. 
+            </summary>
+            <typeparam name="T"> Response type. </typeparam>
+        </member>
+        <member name="P:DoubleGisApi.Response.ApiResponse`1.IsCanceled">
+            <summary>
+            Gets or sets a value indicating whether the response is canceled. 
+            </summary>
+            <value> <c> true </c> if this response is canceled; otherwise, <c> false </c>. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.ApiResponse`1.IsSuccess">
+            <summary>
+            Gets or sets a value indicating whether the response is was successed. 
+            </summary>
+            <value> <c> true </c> if this response is successed; otherwise, <c> false </c>. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.ApiResponse`1.Error">
+            <summary>
+            Gets or sets the error. 
+            </summary>
+            <value> The error. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.ApiResponse`1.Response">
+            <summary>
+            Gets or sets the response. 
+            </summary>
+            <value> The response. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.ApiResponse`1.InfoMessage">
+            <summary>
+            Gets or sets the info message. 
+            </summary>
+            <value> The info message. </value>
+        </member>
+        <member name="T:DoubleGisApi.Response.BranchesOfFirmResponse">
+            <summary>
+            Class that represents braches of the firm response. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Response.BranchesOfFirmResponse.FirmId">
+            <summary>
+            Gets or sets the firm ID of the search. 
+            </summary>
+            <value> The firm ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.BranchesOfFirmResponse.Result">
+            <summary>
+            Gets or sets the results. 
+            </summary>
+            <value> The results. </value>
+        </member>
+        <member name="T:DoubleGisApi.Response.FindAdsResponse">
+            <summary>
+            Class that represents ads search response. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Response.FindAdsResponse.What">
+            <summary>
+            Gets or sets the what are you searched. 
+            </summary>
+            <value> The what did you search. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FindAdsResponse.Where">
+            <summary>
+            Gets or sets the where did yo search. 
+            </summary>
+            <value> The where. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FindAdsResponse.Result">
+            <summary>
+            Gets or sets the results of the response. 
+            </summary>
+            <value> The results of the response. </value>
+        </member>
+        <member name="T:DoubleGisApi.Response.FirmProfileResponse">
+            <summary>
+            Class that represents Firm Profile Response. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Id">
+            <summary>
+            Gets or sets the firm ID. 
+            </summary>
+            <value> The firm ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.DeletionDate">
+            <summary>
+            Gets or sets the deletion date of the branch. 
+            </summary>
+            <value> The deletion date. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.RegisterBcUrl">
+            <summary>
+            Gets or sets the query parameters for API Tracker. 
+            </summary>
+            <value> The query parameters for API Tracker. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Lon">
+            <summary>
+            Gets or sets the longitude coordinates on the map. 
+            </summary>
+            <value> The longitude. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Lat">
+            <summary>
+            Gets or sets the latitude coordinates on the map. 
+            </summary>
+            <value> The latitude. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Name">
+            <summary>
+            Gets or sets the firms name. 
+            </summary>
+            <value> The firms name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.FirmGroup">
+            <summary>
+            Gets or sets the firm group. If firm has some branches. 
+            </summary>
+            <value> The firm group. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.CityName">
+            <summary>
+            Gets or sets the city name. 
+            </summary>
+            <value> The city name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Address">
+            <summary>
+            Gets or sets the address of the firm. 
+            </summary>
+            <value> The address of the firm. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.AdditionalInfo">
+            <summary>
+            Gets or sets the additional info. 
+            </summary>
+            <value> The additional info. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Rubrics">
+            <summary>
+            Gets or sets the rubrics. 
+            </summary>
+            <value> The rubrics. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Article">
+            <summary>
+            Gets or sets the article, 2000 chars or advertising. 
+            </summary>
+            <value> The article. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Contacts">
+            <summary>
+            Gets or sets the contacts of the firm. 
+            </summary>
+            <value> The contacts of the firm. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Schedule">
+            <summary>
+            Gets or sets the working schedule of the firm. 
+            </summary>
+            <value> The working schedule. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.Payoptions">
+            <summary>
+            Gets or sets the pay options. 
+            </summary>
+            <value> The pay options. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.ReviewsCount">
+            <summary>
+            Gets or sets the reviews count on Flamp.ru. 
+            </summary>
+            <value> The reviews count. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.ModificationTime">
+            <summary>
+            Gets or sets the modification time. 
+            </summary>
+            <value> The modification time. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmProfileResponse.CreateTime">
+            <summary>
+            Gets or sets the creation time. 
+            </summary>
+            <value> The creation time. </value>
+        </member>
+        <member name="T:DoubleGisApi.Response.FirmSearchResponse">
+            <summary>
+            Class that represents firm search response. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmSearchResponse.What">
+            <summary>
+            Gets or sets the what are you searched. 
+            </summary>
+            <value> The what did you search. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmSearchResponse.Where">
+            <summary>
+            Gets or sets the where did yo search. 
+            </summary>
+            <value> The where. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmSearchResponse.DidYouMean">
+            <summary>
+            Gets or sets the hint for your search. 
+            </summary>
+            <value> The hint for the search. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmSearchResponse.Advertising">
+            <summary>
+            Gets or sets the advertisings. 
+            </summary>
+            <value> The advertisings. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.FirmSearchResponse.Result">
+            <summary>
+            Gets or sets the results of the response. 
+            </summary>
+            <value> The results of the response. </value>
+        </member>
+        <member name="T:DoubleGisApi.Response.GetCitiesResponse">
+            <summary>
+            Class that represents the GeoObject Response. 
+            </summary>
+        </member>
+        <member name="T:DoubleGisApi.Response.GetGeoObjectResponse">
+            <summary>
+            Class that represents the GeoObject Response. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Response.GetGeoObjectResponse.Result">
+            <summary>
+            Gets or sets the results of the response. 
+            </summary>
+            <value> The results of the response. </value>
+        </member>
+        <member name="T:DoubleGisApi.Response.GetProjectResponse">
+            <summary>
+            Class that represents the Projects Response. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Response.GetProjectResponse.Result">
+            <summary>
+            Gets or sets the results of the response. 
+            </summary>
+            <value> The results of the response. </value>
+        </member>
+        <member name="T:DoubleGisApi.Response.GetRubricResponse">
+            <summary>
+            Class that represents Rubricator Response. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Response.GetRubricResponse.ParentId">
+            <summary>
+            Gets or sets the parent rubric ID. 
+            </summary>
+            <value> The parent rubric ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.GetRubricResponse.Result">
+            <summary>
+            Gets or sets the results of the response. 
+            </summary>
+            <value> The results of the response. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.GisResponseBase.ApiVersion">
+            <summary>
+            Gets or sets the API version. 
+            </summary>
+            <value> The API version. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.GisResponseBase.ResponseCode">
+            <summary>
+            Gets or sets the response code. 200 if ok, else - error. 
+            </summary>
+            <value> The response code. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.GisResponseBase.ErrorCode">
+            <summary>
+            Gets or sets the error code. 
+            </summary>
+            <value> The error code. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.GisResponseBase.ErrorMessage">
+            <summary>
+            Gets or sets the error message. 
+            </summary>
+            <value> The error message. </value>
+        </member>
+        <member name="P:DoubleGisApi.Response.GisResponseBase.Total">
+            <summary>
+            Gets or sets the total results count. 
+            </summary>
+            <value> The total result count. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.AdditionalInfo">
+            <summary>
+            Class that represents the City. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.AdditionalInfo.Currency">
+            <summary>
+            Gets or sets the currency. 
+            </summary>
+            <value> The currency. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.AdditionalInfo.Office">
+            <summary>
+            Gets or sets the office coordinates. 
+            </summary>
+            <value> The office. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.AdditionalInfo.Wifi">
+            <summary>
+            Gets or sets the wifi presence. 
+            </summary>
+            <value> The wifi. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.AdditionalInfo.BusinessLunch">
+            <summary>
+            Gets or sets the business_lunch precence. 
+            </summary>
+            <value> The business_lunch. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.AdditionalInfo.AvgPrice">
+            <summary>
+            Gets or sets the average price. 
+            </summary>
+            <value> The average price. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.AdsResult">
+            <summary>
+            Class that represents the results of the search. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.AdsResult.Advertising">
+            <summary>
+            Gets or sets the advertising. 
+            </summary>
+            <value> The advertising. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Advertising">
+            <summary>
+            Class that represents the advertising. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Advertising.FirmId">
+            <summary>
+            Gets or sets the firm ID of advertising. 
+            </summary>
+            <value> The firm ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Advertising.Hash">
+            <summary>
+            Gets or sets the unique firm hash. 
+            </summary>
+            <value> The firm hash. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Advertising.Title">
+            <summary>
+            Gets or sets the title of advertising. 
+            </summary>
+            <value> The advertising title. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Advertising.Text">
+            <summary>
+            Gets or sets the text of advertising. 
+            </summary>
+            <value> The advertising text. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Advertising.FasWarning">
+            <summary>
+            Gets or sets the FAS warning. 
+            </summary>
+            <value> The FAS warning. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Advertising.Lon">
+            <summary>
+            Gets or sets the longitude. 
+            </summary>
+            <value> The longitude. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Advertising.Lat">
+            <summary>
+            Gets or sets the latitude. 
+            </summary>
+            <value> The latitude. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.City">
+            <summary>
+            Class that represents the City. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.City.Id">
+            <summary>
+            Gets or sets the city ID. 
+            </summary>
+            <value> The city ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.City.Name">
+            <summary>
+            Gets or sets the name of the city. 
+            </summary>
+            <value> The name of the city. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Contact">
+            <summary>
+            Class that represents the contacts container. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Contact.Name">
+            <summary>
+            Gets or sets the name of the contact. 
+            </summary>
+            <value> The contact name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Contact.Priority">
+            <summary>
+            Gets or sets the priority of the contact. 
+            </summary>
+            <value> The contact priority. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Contact.Contacts">
+            <summary>
+            Gets or sets the contacts. 
+            </summary>
+            <value> The contacts. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.ContactEx">
+            <summary>
+            Class that represents the contact info. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.ContactEx.Type">
+            <summary>
+            Gets or sets the type of the contact. 
+            </summary>
+            <value> The contact type. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ContactEx.Value">
+            <summary>
+            Gets or sets the value of the contact. 
+            </summary>
+            <value> The contact value. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ContactEx.RegisterBcUrl">
+            <summary>
+            Gets or sets the register_bc_url. For business connection registering. 
+            </summary>
+            <value> The register_bc_url. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ContactEx.Alias">
+            <summary>
+            Gets or sets the alias of the contact. 
+            </summary>
+            <value> The alias of the contact. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ContactEx.Comment">
+            <summary>
+            Gets or sets the comment for the contact. 
+            </summary>
+            <value> The comment for the contact. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Mon">
+            <summary>
+            Monday working day class. working_hours1 available if there is a break in a working day. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Mon.WorkingHours0">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Mon.WorkingHours1">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Tue">
+            <summary>
+            Tuesday working day class. working_hours1 available if there is a break in a working day. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Tue.WorkingHours0">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Tue.WorkingHours1">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Wed">
+            <summary>
+            Wednesday working day class. working_hours1 available if there is a break in a working day. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Wed.WorkingHours0">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Wed.WorkingHours1">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Thu">
+            <summary>
+            Thursday working day class. working_hours1 available if there is a break in a working day. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Thu.WorkingHours0">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Thu.WorkingHours1">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Fri">
+            <summary>
+            Friday working day class. working_hours1 available if there is a break in a working day. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Fri.WorkingHours0">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Fri.WorkingHours1">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Sat">
+            <summary>
+            Saturday working day class. working_hours1 available if there is a break in a working day. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Sat.WorkingHours0">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Sat.WorkingHours1">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Sun">
+            <summary>
+            Sunday working day class. working_hours1 available if there is a break in a working day. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Sun.WorkingHours0">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Sun.WorkingHours1">
+            <summary>
+            Gets or sets the working hours. 
+            </summary>
+            <value> The working hours. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.DidYouMean">
+            <summary>
+            Class that represents hint for the search. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.DidYouMean.Rubrics">
+            <summary>
+            Gets or sets the rubrics hints. 
+            </summary>
+            <value> The rubrics hints. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.DidYouMean.Geo">
+            <summary>
+            Gets or sets the where position hints. 
+            </summary>
+            <value> The where hints. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.FirmGroup">
+            <summary>
+            Class that represents the group ID. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.FirmGroup.Id">
+            <summary>
+            Gets or sets the unique group ID. 
+            </summary>
+            <value> The group ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.FirmGroup.Count">
+            <summary>
+            Gets or sets the count of firms in group. 
+            </summary>
+            <value> The count of firms in group. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Geo">
+            <summary>
+            Class that represent the where field hint. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Geo.Id">
+            <summary>
+            Gets or sets the city ID. 
+            </summary>
+            <value> The city ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Geo.Name">
+            <summary>
+            Gets or sets the name of the city. 
+            </summary>
+            <value> The name of the city. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.GeoAttributes">
+            <summary>
+            Class thatrepresents GeoObject attributes. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Abbreviation">
+            <summary>
+            Gets or sets the abbreviation. 
+            </summary>
+            <value> The abbreviation. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Type">
+            <summary>
+            Gets or sets the type. 
+            </summary>
+            <value> The type. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.City">
+            <summary>
+            Gets or sets the city name. 
+            </summary>
+            <value> The city name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.District">
+            <summary>
+            Gets or sets the district name. 
+            </summary>
+            <value> The district name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Street">
+            <summary>
+            Gets or sets the street name. 
+            </summary>
+            <value> The street name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Number">
+            <summary>
+            Gets or sets the number of building. 
+            </summary>
+            <value> The number of building. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Street2">
+            <summary>
+            Gets or sets the 2 street name. 
+            </summary>
+            <value> The 2 street name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Number2">
+            <summary>
+            Gets or sets the number of 2 building. 
+            </summary>
+            <value> The number of 2 building. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Buildingname">
+            <summary>
+            Gets or sets the building name. 
+            </summary>
+            <value> The building name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Purpose">
+            <summary>
+            Gets or sets the purpose of the building. 
+            </summary>
+            <value> The purpose of the building. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Elevation">
+            <summary>
+            Gets or sets the elevation. 
+            </summary>
+            <value> The elevation. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Firmcount">
+            <summary>
+            Gets or sets the firm count. 
+            </summary>
+            <value> The firm count. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Index">
+            <summary>
+            Gets or sets the postal index. 
+            </summary>
+            <value> The postal index. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Info">
+            <summary>
+            Gets or sets the additional information about sight. 
+            </summary>
+            <value> The additional information about sight. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Mapclass">
+            <summary>
+            Gets or sets the map class. 
+            </summary>
+            <value> The map class. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoAttributes.Synonym">
+            <summary>
+            Gets or sets the synonym. 
+            </summary>
+            <value> The synonym. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.GeoObject">
+            <summary>
+            Class that represents the GeoObject container. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.Id">
+            <summary>
+            Gets or sets the GeoObject ID. 
+            </summary>
+            <value> The GeoObject ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.ProjectId">
+            <summary>
+            Gets or sets the project ID. 
+            </summary>
+            <value> The project ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.Type">
+            <summary>
+            Gets or sets the GeoObject type. 
+            </summary>
+            <value> The GeoObject type. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.Name">
+            <summary>
+            Gets or sets the name. 
+            </summary>
+            <value> The name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.ShortName">
+            <summary>
+            Gets or sets the short name. 
+            </summary>
+            <value> The short name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.Selection">
+            <summary>
+            Gets or sets the selection. Point. 
+            </summary>
+            <value> The selection. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.Centroid">
+            <summary>
+            Gets or sets the centroid. Point. 
+            </summary>
+            <value> The centroid. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.Attributes">
+            <summary>
+            Gets or sets the attributes of the GeoObject. 
+            </summary>
+            <value> The attributes of the GeoObject. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.GeoObject.Dist">
+            <summary>
+            Gets or sets the distance in meters from the center of the search. 
+            </summary>
+            <value> The distance. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Project">
+            <summary>
+            Class that represents Project. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Id">
+            <summary>
+            Gets or sets the projects ID. 
+            </summary>
+            <value> The projects ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Name">
+            <summary>
+            Gets or sets the projects name. 
+            </summary>
+            <value> The projects name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Language">
+            <summary>
+            Gets or sets the language. 
+            </summary>
+            <value> The language. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.CountryCode">
+            <summary>
+            Gets or sets the country code. 
+            </summary>
+            <value> The country code. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Timezone">
+            <summary>
+            Gets or sets the timezone. 
+            </summary>
+            <value> The timezone. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.ActualExtent">
+            <summary>
+            Gets or sets the actual extent. Geometry of the project. 
+            </summary>
+            <value> The actual extent. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Centroid">
+            <summary>
+            Gets or sets the centroid. Historical center of the city. 
+            </summary>
+            <value> The centroid. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.MinZoomLevel">
+            <summary>
+            Gets or sets the minimum zoomlevel. 
+            </summary>
+            <value> The minimum zoomlevel. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.MaxZoomLevel">
+            <summary>
+            Gets or sets the maximum zoomlevel. 
+            </summary>
+            <value> The maximum zoomlevel. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.ZoomLevel">
+            <summary>
+            Gets or sets the zoomlevel. 
+            </summary>
+            <value> The zoomlevel. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Transport">
+            <summary>
+            Gets or sets the transport. Is there any transport data. 
+            </summary>
+            <value> The transport. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Traffic">
+            <summary>
+            Gets or sets the traffic. Is there any traffic data. 
+            </summary>
+            <value> The traffic. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.Flamp">
+            <summary>
+            Gets or sets the flamp. Is project in Flamp. 
+            </summary>
+            <value> The flamp. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.FirmsCount">
+            <summary>
+            Gets or sets the firms count in the project. 
+            </summary>
+            <value> The firms count. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.FilialsCount">
+            <summary>
+            Gets or sets the filials count in the project. 
+            </summary>
+            <value> The filials count. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.RubricsCount">
+            <summary>
+            Gets or sets the rubrics count in the project. 
+            </summary>
+            <value> The rubrics count. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Project.GeosCount">
+            <summary>
+            Gets or sets the geos count in the project. 
+            </summary>
+            <value> The geos count. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Result">
+            <summary>
+            Class that represents the results of the search. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Result.Dist">
+            <summary>
+            Gets or sets the distance from center of the search to the result. 
+            </summary>
+            <value> The distance. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Result.ReviewsCount">
+            <summary>
+            Gets or sets the reviews count on Flamp.ru. 
+            </summary>
+            <value> The reviews count. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Id">
+            <summary>
+            Gets or sets the unique firm ID. 
+            </summary>
+            <value> The firm ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Lon">
+            <summary>
+            Gets or sets the longitude coordinates on the map. 
+            </summary>
+            <value> The longitude. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Lat">
+            <summary>
+            Gets or sets the latitude coordinates on the map. 
+            </summary>
+            <value> The latitude. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Name">
+            <summary>
+            Gets or sets the name of the firm. 
+            </summary>
+            <value> The firms name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Hash">
+            <summary>
+            Gets or sets the unique hash. 
+            </summary>
+            <value> The firm hash. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.CityName">
+            <summary>
+            Gets or sets the city name. 
+            </summary>
+            <value> The city name. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Address">
+            <summary>
+            Gets or sets the address of the firm. 
+            </summary>
+            <value> The address the address. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.FirmGroup">
+            <summary>
+            Gets or sets the firm group. IF firm has branches. 
+            </summary>
+            <value> The firm group. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Microcomment">
+            <summary>
+            Gets or sets the microcomment or advertising. 
+            </summary>
+            <value> The microcomment or advertising. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.FasWarning">
+            <summary>
+            Gets or sets the FAS warning. 
+            </summary>
+            <value> The FAS warning. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.ResultBase.Rubrics">
+            <summary>
+            Gets or sets the rubrics. 
+            </summary>
+            <value> The rubrics. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Rubric">
+            <summary>
+            Class that represents the what field hint. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Rubric.Id">
+            <summary>
+            Gets or sets the ID of the rubric. 
+            </summary>
+            <value> The ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Rubric.Name">
+            <summary>
+            Gets or sets the name of the rubric. 
+            </summary>
+            <value> The name of the rubric. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Rubric.ParentId">
+            <summary>
+            Gets or sets the parent ID of the rubric. 
+            </summary>
+            <value> The parent ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Rubric.Children">
+            <summary>
+            Gets or sets the childrens. 
+            </summary>
+            <value> The childrens. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Rubric.Keyword">
+            <summary>
+            Gets or sets the keyword of the rubric. 
+            </summary>
+            <value> The keyword of the rubric. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.RubricInfo">
+            <summary>
+            Class that represents the what field hint. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.RubricInfo.Name">
+            <summary>
+            Gets or sets the name of the rubric. 
+            </summary>
+            <value> The name of the rubric. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.RubricInfo.Id">
+            <summary>
+            Gets or sets the ID of the rubric. 
+            </summary>
+            <value> The ID of the rubric. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.RubricInfo.Alias">
+            <summary>
+            Gets or sets the alias of the rubric. 
+            </summary>
+            <value> The alias of the rubric. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.RubricInfo.ParentId">
+            <summary>
+            Gets or sets the parent rubric ID. 
+            </summary>
+            <value> The parent rubric ID. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.RubricInfo.Children">
+            <summary>
+            Gets or sets the children. 
+            </summary>
+            <value> The children. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.Schedule">
+            <summary>
+            Class that represent the working schedule of the firm. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Mon">
+            <summary>
+            Gets or sets the Monday. 
+            </summary>
+            <value> The Monday. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Tue">
+            <summary>
+            Gets or sets the Tuesday. 
+            </summary>
+            <value> The Tuesday. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Wed">
+            <summary>
+            Gets or sets the Wednesday. 
+            </summary>
+            <value> The Wednesday. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Thu">
+            <summary>
+            Gets or sets the Thursday. 
+            </summary>
+            <value> The Thursday. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Fri">
+            <summary>
+            Gets or sets the Friday. 
+            </summary>
+            <value> The Friday. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Sat">
+            <summary>
+            Gets or sets the Saturday. 
+            </summary>
+            <value> The Saturday. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Sun">
+            <summary>
+            Gets or sets the Sunday. 
+            </summary>
+            <value> The Sunday. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.Schedule.Comment">
+            <summary>
+            Gets or sets the additional comment. 
+            </summary>
+            <value> The comment. </value>
+        </member>
+        <member name="T:DoubleGisApi.Types.WorkingHours">
+            <summary>
+            Class that represents working hours. 
+            </summary>
+        </member>
+        <member name="P:DoubleGisApi.Types.WorkingHours.From">
+            <summary>
+            Gets or sets working day start time. 
+            </summary>
+            <value> Working day start time. </value>
+        </member>
+        <member name="P:DoubleGisApi.Types.WorkingHours.To">
+            <summary>
+            Gets or sets working day end time. 
+            </summary>
+            <value> Working day end time. </value>
+        </member>
+    </members>
+</doc>

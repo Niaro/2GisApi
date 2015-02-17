@@ -1,1 +1,3 @@
 src/2GisApi/project.lock.json
+packages/
+artifacts/

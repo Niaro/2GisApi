@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22512.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mindfor.2GisApi", "src\Mindfor.2GisApi\Mindfor.2GisApi.kproj", "{3BDF12F6-761F-4EA6-B298-F810BBCC2A38}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mindfor.DoubleGisApi", "src\Mindfor.DoubleGisApi\Mindfor.DoubleGisApi.kproj", "{3BDF12F6-761F-4EA6-B298-F810BBCC2A38}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{25EB3ED3-5220-403B-B1B0-A433AD070136}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		NuGet.config = NuGet.config
 	EndProjectSection
 	ProjectSection(FolderGlobals) = preProject
-		Documents_2Dev_2Mindfor.2GisApi_2global_1json__JSONSchema = http://json.schemastore.org/global
+		Documents_2Dev_2Mindfor.DoubleGisApi_2global_1json__JSONSchema = http://json.schemastore.org/global
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{068C7C54-785A-4D57-AB69-F4D516F755EE}"
