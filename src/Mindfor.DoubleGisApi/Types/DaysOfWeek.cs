@@ -23,12 +23,15 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
+using System;
 using System.Runtime.Serialization;
 
 namespace Midnfor.DoubleGisApi.Types
 {
 	public interface IDaySchedule
 	{
+		DayOfWeek Day { get; }
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -48,6 +51,8 @@ namespace Midnfor.DoubleGisApi.Types
 	[DataContract(Name = "mon", Namespace = "")]
 	public class Mon : IDaySchedule
 	{
+		public DayOfWeek Day { get; } = DayOfWeek.Monday;
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -69,6 +74,8 @@ namespace Midnfor.DoubleGisApi.Types
 	[DataContract(Name = "tue", Namespace = "")]
 	public class Tue : IDaySchedule
 	{
+		public DayOfWeek Day { get; } = DayOfWeek.Tuesday;
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -90,6 +97,8 @@ namespace Midnfor.DoubleGisApi.Types
 	[DataContract(Name = "wed", Namespace = "")]
 	public class Wed : IDaySchedule
 	{
+		public DayOfWeek Day { get; } = DayOfWeek.Wednesday;
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -111,6 +120,8 @@ namespace Midnfor.DoubleGisApi.Types
 	[DataContract(Name = "thu", Namespace = "")]
 	public class Thu : IDaySchedule
 	{
+		public DayOfWeek Day { get; } = DayOfWeek.Thursday;
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -132,6 +143,8 @@ namespace Midnfor.DoubleGisApi.Types
 	[DataContract(Name = "fri", Namespace = "")]
 	public class Fri : IDaySchedule
 	{
+		public DayOfWeek Day { get; } = DayOfWeek.Friday;
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -153,6 +166,8 @@ namespace Midnfor.DoubleGisApi.Types
 	[DataContract(Name = "sat", Namespace = "")]
 	public class Sat : IDaySchedule
 	{
+		public DayOfWeek Day { get; } = DayOfWeek.Saturday;
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -174,6 +189,8 @@ namespace Midnfor.DoubleGisApi.Types
 	[DataContract(Name = "sun", Namespace = "")]
 	public class Sun : IDaySchedule
 	{
+		public DayOfWeek Day { get; } = DayOfWeek.Sunday;
+
 		/// <summary>
 		/// Gets or sets the working hours. 
 		/// </summary>
@@ -181,10 +198,6 @@ namespace Midnfor.DoubleGisApi.Types
 		[DataMember(Name = "working_hours-0")]
 		public WorkingHours WorkingHours0 { get; set; }
 
-		/// <summary>
-		/// Gets or sets the working hours. 
-		/// </summary>
-		/// <value> The working hours. </value>
 		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
