@@ -38,55 +38,55 @@ namespace Midnfor.DoubleGisApi.Types
 		/// </summary>
 		/// <value> The Monday. </value>
 		[DataMember(Name = "mon")]
-		private Mon Mon { get; set; }
+		public Mon Mon { get; set; }
 
 		/// <summary>
 		/// Gets or sets the Tuesday. 
 		/// </summary>
 		/// <value> The Tuesday. </value>
 		[DataMember(Name = "tue")]
-		private Tue Tue { get; set; }
+		public Tue Tue { get; set; }
 
 		/// <summary>
 		/// Gets or sets the Wednesday. 
 		/// </summary>
 		/// <value> The Wednesday. </value>
 		[DataMember(Name = "wed")]
-		private Wed Wed { get; set; }
+		public Wed Wed { get; set; }
 
 		/// <summary>
 		/// Gets or sets the Thursday. 
 		/// </summary>
 		/// <value> The Thursday. </value>
 		[DataMember(Name = "thu")]
-		private Thu Thu { get; set; }
+		public Thu Thu { get; set; }
 
 		/// <summary>
 		/// Gets or sets the Friday. 
 		/// </summary>
 		/// <value> The Friday. </value>
 		[DataMember(Name = "fri")]
-		private Fri Fri { get; set; }
+		public Fri Fri { get; set; }
 
 		/// <summary>
 		/// Gets or sets the Saturday. 
 		/// </summary>
 		/// <value> The Saturday. </value>
 		[DataMember(Name = "sat")]
-		private Sat Sat { get; set; }
+		public Sat Sat { get; set; }
 
 		/// <summary>
 		/// Gets or sets the Sunday. 
 		/// </summary>
 		/// <value> The Sunday. </value>
 		[DataMember(Name = "sun")]
-		private Sun Sun { get; set; }
+		public Sun Sun { get; set; }
 
 		/// <summary>
 		/// Gets or sets the additional comment. 
 		/// </summary>
 		/// <value> The comment. </value>
 		[DataMember(Name = "comment")]
-		private string Comment { get; set; }
+		public string Comment { get; set; }
 	}
 }
