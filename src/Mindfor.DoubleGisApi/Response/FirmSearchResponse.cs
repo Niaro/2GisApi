@@ -40,34 +40,34 @@ namespace DoubleGisApi.Response
 		/// </summary>
 		/// <value> The what did you search. </value>
 		[DataMember(Name = "what")]
-		private string What { get; set; }
+		public string What { get; set; }
 
 		/// <summary>
 		/// Gets or sets the where did yo search. 
 		/// </summary>
 		/// <value> The where. </value>
 		[DataMember(Name = "where")]
-		private string Where { get; set; }
+		public string Where { get; set; }
 
 		/// <summary>
 		/// Gets or sets the hint for your search. 
 		/// </summary>
 		/// <value> The hint for the search. </value>
 		[DataMember(Name = "did_you_mean")]
-		private DidYouMean DidYouMean { get; set; }
+		public DidYouMean DidYouMean { get; set; }
 
 		/// <summary>
 		/// Gets or sets the advertisings. 
 		/// </summary>
 		/// <value> The advertisings. </value>
 		[DataMember(Name = "advertising")]
-		private IEnumerable<Advertising> Advertising { get; set; }
+		public IEnumerable<Advertising> Advertising { get; set; }
 
 		/// <summary>
 		/// Gets or sets the results of the response. 
 		/// </summary>
 		/// <value> The results of the response. </value>
 		[DataMember(Name = "result")]
-		private IEnumerable<Result> Result { get; set; }
+		public IEnumerable<Result> Result { get; set; }
 	}
 }

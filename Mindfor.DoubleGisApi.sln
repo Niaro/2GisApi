@@ -12,11 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		makefile.shade = makefile.shade
 		NuGet.config = NuGet.config
 	EndProjectSection
-	ProjectSection(FolderGlobals) = preProject
-		Documents_2Dev_2Mindfor.DoubleGisApi_2global_1json__JSONSchema = http://json.schemastore.org/global
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{068C7C54-785A-4D57-AB69-F4D516F755EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{75BB108A-E6DA-48A0-844D-987A75C43A3F}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "DoubleGisApiTests", "tests\DoubleGisApiTests\DoubleGisApiTests.kproj", "{2D437C48-37DF-4C8B-B00E-417BE817D68A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,11 +47,28 @@ Global
 		{3BDF12F6-761F-4EA6-B298-F810BBCC2A38}.Release|x64.Build.0 = Release|Any CPU
 		{3BDF12F6-761F-4EA6-B298-F810BBCC2A38}.Release|x86.ActiveCfg = Release|Any CPU
 		{3BDF12F6-761F-4EA6-B298-F810BBCC2A38}.Release|x86.Build.0 = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|ARM.Build.0 = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|x64.Build.0 = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Debug|x86.Build.0 = Debug|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|ARM.ActiveCfg = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|ARM.Build.0 = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|x64.ActiveCfg = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|x64.Build.0 = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|x86.ActiveCfg = Release|Any CPU
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3BDF12F6-761F-4EA6-B298-F810BBCC2A38} = {068C7C54-785A-4D57-AB69-F4D516F755EE}
+		{2D437C48-37DF-4C8B-B00E-417BE817D68A} = {75BB108A-E6DA-48A0-844D-987A75C43A3F}
 	EndGlobalSection
 EndGlobal
