@@ -25,7 +25,7 @@
 
 using System.Runtime.Serialization;
 
-namespace DoubleGisApiWrapper.Types
+namespace DoubleGisApi.Types
 {
 	/// <summary>
 	/// Class that represent the working schedule of the firm. 

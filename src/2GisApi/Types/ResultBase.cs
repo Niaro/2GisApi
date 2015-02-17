@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace DoubleGisApiWrapper.Types
+namespace DoubleGisApi.Types
 {
 	[DataContract(Name = "resultBase", Namespace = "")]
 	public class ResultBase

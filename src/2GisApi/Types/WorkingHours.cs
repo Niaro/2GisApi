@@ -25,7 +25,7 @@
 
 using System.Runtime.Serialization;
 
-namespace DoubleGisApiWrapper.Types
+namespace DoubleGisApi.Types
 {
 	/// <summary>
 	/// Class that represents working hours. 

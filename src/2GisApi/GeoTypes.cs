@@ -23,9 +23,7 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-using System;
-
-namespace DoubleGisApiWrapper
+namespace DoubleGisApi
 {
 	/// <summary>
 	/// Enumaration of GeoObject types. 

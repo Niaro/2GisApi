@@ -25,7 +25,7 @@
 
 using System;
 
-namespace DoubleGisApiWrapper.Response
+namespace DoubleGisApi.Response
 {
 	/// <summary>
 	/// Class that represents the response from API. 

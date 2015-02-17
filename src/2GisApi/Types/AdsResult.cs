@@ -23,10 +23,9 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace DoubleGisApiWrapper.Types
+namespace DoubleGisApi.Types
 {
 	/// <summary>
 	/// Class that represents the results of the search. 

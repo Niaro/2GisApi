@@ -23,11 +23,11 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-using DoubleGisApiWrapper.Types;
+using DoubleGisApi.Types;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace DoubleGisApiWrapper.Response
+namespace DoubleGisApi.Response
 {
 	/// <summary>
 	/// Class that represents the Projects Response. 

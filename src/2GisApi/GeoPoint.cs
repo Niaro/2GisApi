@@ -23,10 +23,9 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-using System;
 using System.Globalization;
 
-namespace DoubleGisApiWrapper
+namespace DoubleGisApi
 {
 	/// <summary>
 	/// Class that represent coordinats in WGS84 format. 

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
-namespace DoubleGisApiWrapper.Response
+namespace DoubleGisApi.Response
 {
 	[DataContract(Name = "gisResponseBase", Namespace = "")]
 	public class GisResponseBase

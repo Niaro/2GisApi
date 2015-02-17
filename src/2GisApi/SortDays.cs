@@ -23,7 +23,7 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-namespace DoubleGisApiWrapper
+namespace DoubleGisApi
 {
 	/// <summary>
 	/// Enumeration of sorting keys by day of week. 
