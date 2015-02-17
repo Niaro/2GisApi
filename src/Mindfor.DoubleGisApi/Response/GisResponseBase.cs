@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace DoubleGisApi.Response
+namespace Midnfor.DoubleGisApi.Response
 {
 	[DataContract(Name = "gisResponseBase", Namespace = "")]
 	public class GisResponseBase

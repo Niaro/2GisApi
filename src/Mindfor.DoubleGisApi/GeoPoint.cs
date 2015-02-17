@@ -25,7 +25,7 @@
 
 using System.Globalization;
 
-namespace DoubleGisApi
+namespace Midnfor.DoubleGisApi
 {
 	/// <summary>
 	/// Class that represent coordinats in WGS84 format. 

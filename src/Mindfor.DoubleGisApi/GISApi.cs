@@ -23,7 +23,7 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-using DoubleGisApi.Response;
+using Midnfor.DoubleGisApi.Response;
 using Newtonsoft.Json;
 using System;
 using System.Globalization;
@@ -32,7 +32,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace DoubleGisApi
+namespace Midnfor.DoubleGisApi
 {
 	public class ErrorMsgs
 	{
@@ -506,7 +506,9 @@ namespace DoubleGisApi
 		/// <param name="where"> The city name. </param>
 		/// <param name="id"> The rubric ID. </param>
 		/// <param name="parentId"> The parent rubric id. </param>
-		/// <param name="showChildren"> Should show children flag. 1 - to show, any other - no. </param>
+		/// <param name="showChildren">
+		/// Should show children flag. 1 - to show, any other - no.
+		/// </param>
 		/// <param name="sort">
 		/// The sorting key. Supported: name - alphabetical sort, popularity - by popularity value.
 		/// </param>

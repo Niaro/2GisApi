@@ -23,11 +23,11 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-using DoubleGisApi.Types;
+using Midnfor.DoubleGisApi.Types;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace DoubleGisApi.Response
+namespace Midnfor.DoubleGisApi.Response
 {
 	/// <summary>
 	/// Class that represents Rubricator Response. 

@@ -26,7 +26,7 @@
 
 using System.Runtime.Serialization;
 
-namespace DoubleGisApi.Types
+namespace Midnfor.DoubleGisApi.Types
 {
 	/// <summary>
 	/// Class thatrepresents GeoObject attributes. 

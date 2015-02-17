@@ -26,7 +26,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace DoubleGisApi.Types
+namespace Midnfor.DoubleGisApi.Types
 {
 	/// <summary>
 	/// Class that represents hint for the search. 

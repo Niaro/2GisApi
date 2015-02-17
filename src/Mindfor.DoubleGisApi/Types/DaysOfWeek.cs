@@ -25,7 +25,7 @@
 
 using System.Runtime.Serialization;
 
-namespace DoubleGisApi.Types
+namespace Midnfor.DoubleGisApi.Types
 {
 	/// <summary>
 	/// Monday working day class. working_hours1 available if there is a break in a working day. 

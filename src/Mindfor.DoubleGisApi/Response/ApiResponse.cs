@@ -25,7 +25,7 @@
 
 using System;
 
-namespace DoubleGisApi.Response
+namespace Midnfor.DoubleGisApi.Response
 {
 	/// <summary>
 	/// Class that represents the response from API. 

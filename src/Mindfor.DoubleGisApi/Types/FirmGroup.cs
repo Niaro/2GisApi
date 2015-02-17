@@ -25,7 +25,7 @@
 
 using System.Runtime.Serialization;
 
-namespace DoubleGisApi.Types
+namespace Midnfor.DoubleGisApi.Types
 {
 	/// <summary>
 	/// Class that represents the group ID. 

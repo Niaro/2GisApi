@@ -23,7 +23,7 @@
 // </copyright>
 // <author> George Evstigneev </author>
 
-namespace DoubleGisApi
+namespace Midnfor.DoubleGisApi
 {
 	/// <summary>
 	/// Bounds for Firms search. 
