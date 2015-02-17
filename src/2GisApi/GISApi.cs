@@ -25,7 +25,6 @@
 
 using DoubleGisApiWrapper.Response;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
 using System;
 using System.Globalization;
 using System.IO;
@@ -508,9 +507,7 @@ namespace DoubleGisApiWrapper
 		/// <param name="where"> The city name. </param>
 		/// <param name="id"> The rubric ID. </param>
 		/// <param name="parentId"> The parent rubric id. </param>
-		/// <param name="showChildren">
-		/// Should show children flag. 1 - to show, any other - no.
-		/// </param>
+		/// <param name="showChildren"> Should show children flag. 1 - to show, any other - no. </param>
 		/// <param name="sort">
 		/// The sorting key. Supported: name - alphabetical sort, popularity - by popularity value.
 		/// </param>
