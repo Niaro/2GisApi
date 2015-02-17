@@ -27,11 +27,26 @@ using System.Runtime.Serialization;
 
 namespace Midnfor.DoubleGisApi.Types
 {
+	public interface IDaySchedule
+	{
+		/// <summary>
+		/// Gets or sets the working hours. 
+		/// </summary>
+		/// <value> The working hours. </value>
+		WorkingHours WorkingHours0 { get; set; }
+
+		/// <summary>
+		/// Gets or sets the working hours. Available if there is a break in a working day. 
+		/// </summary>
+		/// <value> The working hours. </value>
+		WorkingHours WorkingHours1 { get; set; }
+	}
+
 	/// <summary>
 	/// Monday working day class. working_hours1 available if there is a break in a working day. 
 	/// </summary>
-	[DataContract(Name = "Mon", Namespace = "")]
-	public class Mon
+	[DataContract(Name = "mon", Namespace = "")]
+	public class Mon : IDaySchedule
 	{
 		/// <summary>
 		/// Gets or sets the working hours. 
@@ -44,15 +59,15 @@ namespace Midnfor.DoubleGisApi.Types
 		/// Gets or sets the working hours. 
 		/// </summary>
 		/// <value> The working hours. </value>
-		[DataMember(Name = "working_hours-1")]
+		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
 
 	/// <summary>
 	/// Tuesday working day class. working_hours1 available if there is a break in a working day. 
 	/// </summary>
-	[DataContract(Name = "Tue", Namespace = "")]
-	public class Tue
+	[DataContract(Name = "tue", Namespace = "")]
+	public class Tue : IDaySchedule
 	{
 		/// <summary>
 		/// Gets or sets the working hours. 
@@ -65,15 +80,15 @@ namespace Midnfor.DoubleGisApi.Types
 		/// Gets or sets the working hours. 
 		/// </summary>
 		/// <value> The working hours. </value>
-		[DataMember(Name = "working_hours-1")]
+		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
 
 	/// <summary>
 	/// Wednesday working day class. working_hours1 available if there is a break in a working day. 
 	/// </summary>
-	[DataContract(Name = "Wed", Namespace = "")]
-	public class Wed
+	[DataContract(Name = "wed", Namespace = "")]
+	public class Wed : IDaySchedule
 	{
 		/// <summary>
 		/// Gets or sets the working hours. 
@@ -86,15 +101,15 @@ namespace Midnfor.DoubleGisApi.Types
 		/// Gets or sets the working hours. 
 		/// </summary>
 		/// <value> The working hours. </value>
-		[DataMember(Name = "working_hours-1")]
+		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
 
 	/// <summary>
 	/// Thursday working day class. working_hours1 available if there is a break in a working day. 
 	/// </summary>
-	[DataContract(Name = "Thu", Namespace = "")]
-	public class Thu
+	[DataContract(Name = "thu", Namespace = "")]
+	public class Thu : IDaySchedule
 	{
 		/// <summary>
 		/// Gets or sets the working hours. 
@@ -107,15 +122,15 @@ namespace Midnfor.DoubleGisApi.Types
 		/// Gets or sets the working hours. 
 		/// </summary>
 		/// <value> The working hours. </value>
-		[DataMember(Name = "working_hours-1")]
+		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
 
 	/// <summary>
 	/// Friday working day class. working_hours1 available if there is a break in a working day. 
 	/// </summary>
-	[DataContract(Name = "Fri", Namespace = "")]
-	public class Fri
+	[DataContract(Name = "fri", Namespace = "")]
+	public class Fri : IDaySchedule
 	{
 		/// <summary>
 		/// Gets or sets the working hours. 
@@ -128,15 +143,15 @@ namespace Midnfor.DoubleGisApi.Types
 		/// Gets or sets the working hours. 
 		/// </summary>
 		/// <value> The working hours. </value>
-		[DataMember(Name = "working_hours-1")]
+		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
 
 	/// <summary>
 	/// Saturday working day class. working_hours1 available if there is a break in a working day. 
 	/// </summary>
-	[DataContract(Name = "Sat", Namespace = "")]
-	public class Sat
+	[DataContract(Name = "sat", Namespace = "")]
+	public class Sat : IDaySchedule
 	{
 		/// <summary>
 		/// Gets or sets the working hours. 
@@ -149,15 +164,15 @@ namespace Midnfor.DoubleGisApi.Types
 		/// Gets or sets the working hours. 
 		/// </summary>
 		/// <value> The working hours. </value>
-		[DataMember(Name = "working_hours-1")]
+		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
 
 	/// <summary>
 	/// Sunday working day class. working_hours1 available if there is a break in a working day. 
 	/// </summary>
-	[DataContract(Name = "Sun", Namespace = "")]
-	public class Sun
+	[DataContract(Name = "sun", Namespace = "")]
+	public class Sun : IDaySchedule
 	{
 		/// <summary>
 		/// Gets or sets the working hours. 
@@ -170,7 +185,7 @@ namespace Midnfor.DoubleGisApi.Types
 		/// Gets or sets the working hours. 
 		/// </summary>
 		/// <value> The working hours. </value>
-		[DataMember(Name = "working_hours-1")]
+		[DataMember(Name = "working_hours-1", EmitDefaultValue = false)]
 		public WorkingHours WorkingHours1 { get; set; }
 	}
 }
