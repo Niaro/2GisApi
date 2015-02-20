@@ -2,17 +2,17 @@
   "locked": false,
   "version": 1,
   "libraries": {
-    "Microsoft.Framework.ConfigurationModel/1.0.0-beta4-10853": {
+    "Microsoft.Framework.ConfigurationModel/1.0.0-beta4-10857": {
       "dependencySets": {
         ".NETFramework,Version=v4.5": {
-          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10853"
+          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10857"
         },
         "Asp.Net,Version=v5.0": {
-          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10853",
-          "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4-11090"
+          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10857",
+          "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4-11094"
         },
         "Asp.NetCore,Version=v5.0": {
-          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10853",
+          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10857",
           "System.Collections": "4.0.10-beta-22616",
           "System.Diagnostics.Debug": "4.0.10-beta-22616",
           "System.IO.FileSystem": "4.0.0-beta-22616",
@@ -20,10 +20,10 @@
           "System.Resources.ResourceManager": "4.0.0-beta-22616",
           "System.Runtime.Extensions": "4.0.10-beta-22616",
           "System.Runtime.InteropServices": "4.0.20-beta-22616",
-          "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4-11090"
+          "Microsoft.Framework.Runtime.Interfaces": "1.0.0-beta4-11094"
         },
         ".NETPortable,Version=v4.6,Profile=Profile151": {
-          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10853"
+          "Microsoft.Framework.ConfigurationModel.Interfaces": "1.0.0-beta4-10857"
         }
       },
       "frameworkAssemblies": {
@@ -52,8 +52,8 @@
         ]
       },
       "contents": {
-        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4-10853.nupkg": {},
-        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4-10853.nupkg.sha512": {},
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4-10857.nupkg": {},
+        "Microsoft.Framework.ConfigurationModel.1.0.0-beta4-10857.nupkg.sha512": {},
         "Microsoft.Framework.ConfigurationModel.nuspec": {},
         "lib\\aspnet50\\Microsoft.Framework.ConfigurationModel.dll": {},
         "lib\\aspnet50\\Microsoft.Framework.ConfigurationModel.xml": {},
@@ -65,7 +65,7 @@
         "lib\\portable-net451+win81+wpa81\\Microsoft.Framework.ConfigurationModel.xml": {}
       }
     },
-    "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4-10853": {
+    "Microsoft.Framework.ConfigurationModel.Interfaces/1.0.0-beta4-10857": {
       "dependencySets": {
         "Asp.NetCore,Version=v5.0": {
           "System.Collections": "4.0.10-beta-22616",
@@ -103,8 +103,8 @@
         ]
       },
       "contents": {
-        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4-10853.nupkg": {},
-        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4-10853.nupkg.sha512": {},
+        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4-10857.nupkg": {},
+        "Microsoft.Framework.ConfigurationModel.Interfaces.1.0.0-beta4-10857.nupkg.sha512": {},
         "Microsoft.Framework.ConfigurationModel.Interfaces.nuspec": {},
         "lib\\aspnet50\\Microsoft.Framework.ConfigurationModel.Interfaces.dll": {},
         "lib\\aspnet50\\Microsoft.Framework.ConfigurationModel.Interfaces.xml": {},
@@ -116,19 +116,19 @@
         "lib\\portable-net451+win81+wpa81\\Microsoft.Framework.ConfigurationModel.Interfaces.xml": {}
       }
     },
-    "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4-10853": {
+    "Microsoft.Framework.ConfigurationModel.Json/1.0.0-beta4-10857": {
       "dependencySets": {
         ".NETFramework,Version=v4.5": {
           "Newtonsoft.Json": "6.0.6",
-          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-10853"
+          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-10857"
         },
         "Asp.Net,Version=v5.0": {
           "Newtonsoft.Json": "6.0.6",
-          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-10853"
+          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-10857"
         },
         "Asp.NetCore,Version=v5.0": {
           "Newtonsoft.Json": "6.0.6",
-          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-10853"
+          "Microsoft.Framework.ConfigurationModel": "1.0.0-beta4-10857"
         }
       },
       "frameworkAssemblies": {
@@ -146,8 +146,8 @@
         ]
       },
       "contents": {
-        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-10853.nupkg": {},
-        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-10853.nupkg.sha512": {},
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-10857.nupkg": {},
+        "Microsoft.Framework.ConfigurationModel.Json.1.0.0-beta4-10857.nupkg.sha512": {},
         "Microsoft.Framework.ConfigurationModel.Json.nuspec": {},
         "lib\\aspnet50\\Microsoft.Framework.ConfigurationModel.Json.dll": {},
         "lib\\aspnet50\\Microsoft.Framework.ConfigurationModel.Json.xml": {},
@@ -157,7 +157,7 @@
         "lib\\net45\\Microsoft.Framework.ConfigurationModel.Json.xml": {}
       }
     },
-    "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4-11090": {
+    "Microsoft.Framework.Runtime.Interfaces/1.0.0-beta4-11094": {
       "dependencySets": {
         "Asp.NetCore,Version=v5.0": {
           "System.IO": "4.0.10-beta-22616",
@@ -177,8 +177,8 @@
         ]
       },
       "contents": {
-        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11090.nupkg": {},
-        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11090.nupkg.sha512": {},
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11094.nupkg": {},
+        "Microsoft.Framework.Runtime.Interfaces.1.0.0-beta4-11094.nupkg.sha512": {},
         "Microsoft.Framework.Runtime.Interfaces.nuspec": {},
         "lib\\aspnet50\\Microsoft.Framework.Runtime.Interfaces.dll": {},
         "lib\\aspnet50\\Microsoft.Framework.Runtime.Interfaces.xml": {},
