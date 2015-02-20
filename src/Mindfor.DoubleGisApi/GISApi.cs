@@ -507,9 +507,7 @@ namespace Midnfor.DoubleGisApi
 		/// <param name="where"> The city name. </param>
 		/// <param name="id"> The rubric ID. </param>
 		/// <param name="parentId"> The parent rubric id. </param>
-		/// <param name="showChildren">
-		/// Should show children flag. 1 - to show, any other - no.
-		/// </param>
+		/// <param name="showChildren"> Should show children flag. 1 - to show, any other - no. </param>
 		/// <param name="sort">
 		/// The sorting key. Supported: name - alphabetical sort, popularity - by popularity value.
 		/// </param>
@@ -1117,7 +1115,7 @@ namespace Midnfor.DoubleGisApi
 					IGisResponseBase resp = (T)jsonSerializer.Deserialize(sr, typeof(T));
 
 					var apiResponse = new ApiResponse<T> { Response = (T)resp, InfoMessage = response.ReasonPhrase };
-					if (resp.ErrorCode == "200") apiResponse.IsSuccess = true;
+					if (resp.ResponseCode == "200") apiResponse.IsSuccess = true;
 
 					return apiResponse;
 				}
