@@ -507,7 +507,9 @@ namespace Midnfor.DoubleGisApi
 		/// <param name="where"> The city name. </param>
 		/// <param name="id"> The rubric ID. </param>
 		/// <param name="parentId"> The parent rubric id. </param>
-		/// <param name="showChildren"> Should show children flag. 1 - to show, any other - no. </param>
+		/// <param name="showChildren">
+		/// Should show children flag. 1 - to show, any other - no.
+		/// </param>
 		/// <param name="sort">
 		/// The sorting key. Supported: name - alphabetical sort, popularity - by popularity value.
 		/// </param>
@@ -754,7 +756,7 @@ namespace Midnfor.DoubleGisApi
 			try
 			{
 				var response = await _client.GetAsync(uri);
-				return await HandleResponse<int>(response);
+				return await HandleSimpleResponse<int>(response);
 			}
 			catch (HttpRequestException ex)
 			{
@@ -1118,6 +1120,36 @@ namespace Midnfor.DoubleGisApi
 					if (resp.ErrorCode == "200") apiResponse.IsSuccess = true;
 
 					return apiResponse;
+				}
+				catch (JsonSerializationException ex)
+				{
+					return new ApiResponse<T> { Error = ex, IsCanceled = true, InfoMessage = ex.Message };
+				}
+				finally
+				{
+					if (response.Content != null)
+					{
+						response.Dispose();
+					}
+				}
+			}
+			else
+			{
+				return new ApiResponse<T> { IsCanceled = true, InfoMessage = response.ReasonPhrase };
+			}
+		}
+
+		private static async Task<ApiResponse<T>> HandleSimpleResponse<T>(HttpResponseMessage response)
+		{
+			if (response.IsSuccessStatusCode)
+			{
+				try
+				{
+					var contentStream = await response.Content.ReadAsStreamAsync();
+					var jsonSerializer = new JsonSerializer();
+					var sr = new StreamReader(contentStream);
+					var resp = (T)jsonSerializer.Deserialize(sr, typeof(T));
+					return new ApiResponse<T> { Response = (T)resp, IsSuccess = true, InfoMessage = response.ReasonPhrase }; ;
 				}
 				catch (JsonSerializationException ex)
 				{

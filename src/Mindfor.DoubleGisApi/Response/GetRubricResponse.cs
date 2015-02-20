@@ -33,7 +33,7 @@ namespace Midnfor.DoubleGisApi.Response
 	/// Class that represents Rubricator Response. 
 	/// </summary>
 	[DataContract(Name = "getRubricResponse", Namespace = "")]
-	public class GetRubricResponse
+	public class GetRubricResponse : GisResponseBase
 	{
 		/// <summary>
 		/// Gets or sets the parent rubric ID. 
