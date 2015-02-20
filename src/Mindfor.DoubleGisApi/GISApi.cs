@@ -507,7 +507,9 @@ namespace Midnfor.DoubleGisApi
 		/// <param name="where"> The city name. </param>
 		/// <param name="id"> The rubric ID. </param>
 		/// <param name="parentId"> The parent rubric id. </param>
-		/// <param name="showChildren"> Should show children flag. 1 - to show, any other - no. </param>
+		/// <param name="showChildren">
+		/// Should show children flag. 1 - to show, any other - no.
+		/// </param>
 		/// <param name="sort">
 		/// The sorting key. Supported: name - alphabetical sort, popularity - by popularity value.
 		/// </param>
@@ -1062,7 +1064,7 @@ namespace Midnfor.DoubleGisApi
 				errorResult.InfoMessage = ErrorMsgs.WhereError;
 				return errorResult;
 			}
-			////Checking pagesize range
+			//////Checking pagesize range
 			if (pagesize.HasValue)
 			{
 				if (pagesize.Value < 5 || pagesize.Value > 50)
