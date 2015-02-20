@@ -1,7 +1,7 @@
 ﻿{
 	"version": "1.0.7",
 	"authors": [ "Mindfor Ltd." ],
-	"description": "Provides wrapping about 2GIS Api for ASP.NET Core 5.0+",
+	"description": "Provides wrapping over 2GIS Api for ASP.NET Core 5.0+",
 	"dependencies": {
 		"Microsoft.Framework.ConfigurationModel.Json": "1.0.0-*",
 		"System.Runtime.Serialization.Primitives": "4.0.0-*"
