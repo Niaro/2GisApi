@@ -24,6 +24,7 @@
 // <author> George Evstigneev </author>
 
 using Midnfor.DoubleGisApi.Response;
+using Midnfor.DoubleGisApi.Types;
 using Newtonsoft.Json;
 using System;
 using System.Globalization;
@@ -506,9 +507,7 @@ namespace Midnfor.DoubleGisApi
 		/// <param name="where"> The city name. </param>
 		/// <param name="id"> The rubric ID. </param>
 		/// <param name="parentId"> The parent rubric id. </param>
-		/// <param name="showChildren">
-		/// Should show children flag. 1 - to show, any other - no.
-		/// </param>
+		/// <param name="showChildren"> Should show children flag. 1 - to show, any other - no. </param>
 		/// <param name="sort">
 		/// The sorting key. Supported: name - alphabetical sort, popularity - by popularity value.
 		/// </param>
@@ -1104,7 +1103,7 @@ namespace Midnfor.DoubleGisApi
 			return await FindAds(what, where, null, null, null);
 		}
 
-		private static async Task<ApiResponse<T>> HandleResponse<T>(HttpResponseMessage response)
+		private static async Task<ApiResponse<T>> HandleResponse<T>(HttpResponseMessage response) where T : IGisResponseBase
 		{
 			if (response.IsSuccessStatusCode)
 			{
@@ -1113,8 +1112,12 @@ namespace Midnfor.DoubleGisApi
 					var contentStream = await response.Content.ReadAsStreamAsync();
 					var jsonSerializer = new JsonSerializer();
 					var sr = new StreamReader(contentStream);
-					var resp = (T)jsonSerializer.Deserialize(sr, typeof(T));
-					return new ApiResponse<T> { Response = resp, IsSuccess = true, InfoMessage = response.ReasonPhrase };
+					IGisResponseBase resp = (T)jsonSerializer.Deserialize(sr, typeof(T));
+
+					var apiResponse = new ApiResponse<T> { Response = (T)resp, InfoMessage = response.ReasonPhrase };
+					if (resp.ErrorCode == "200") apiResponse.IsSuccess = true;
+
+					return apiResponse;
 				}
 				catch (JsonSerializationException ex)
 				{

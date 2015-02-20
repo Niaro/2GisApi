@@ -2,8 +2,21 @@
 
 namespace Midnfor.DoubleGisApi.Response
 {
+	public interface IGisResponseBase
+	{
+		string ApiVersion { get; set; }
+
+		string ResponseCode { get; set; }
+
+		string ErrorCode { get; set; }
+
+		string ErrorMessage { get; set; }
+
+		string Total { get; set; }
+	}
+
 	[DataContract(Name = "gisResponseBase", Namespace = "")]
-	public class GisResponseBase
+	public class GisResponseBase : IGisResponseBase
 	{
 		/// <summary>
 		/// Gets or sets the API version. 
