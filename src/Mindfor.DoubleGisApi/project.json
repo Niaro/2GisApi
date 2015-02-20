@@ -1,5 +1,5 @@
 ﻿{
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"authors": [ "Mindfor Ltd." ],
 	"description": "Provides wrapping about 2GIS Api for ASP.NET Core 5.0+",
 	"dependencies": {
